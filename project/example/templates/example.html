@@ -1,0 +1,31 @@
+{% load thumbnail %}
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Example View</title>
+</head>
+<body>
+  <h1>Example Records</h1>
+  <table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>File</th>
+        <th>Thumbnail</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for record in example_records %}
+      <tr>
+        <td>{{ record.id }}</td>
+        <td>{{ record.name }}</td>
+        <td><img src="{{ record.file.url }}" alt="{{ record.name }}"></td>
+        <td>{% thumbnail record.file "100x100" crop="center" as im %}<img src="{{ im.url }}" alt="{{ record.name }}">{% endthumbnail %}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+</body>
+</html>

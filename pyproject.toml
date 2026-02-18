@@ -1,0 +1,12 @@
+[project]
+name = "sorl-thumbnail-cache-key-mre"
+version = "0.1.0"
+description = "Minimal reproducible example of `sorl-thumbnail` v12 -> v13 cache key issue"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "django>=5.2.11",
+    "pillow>=12.1.1",
+    "sorl-thumbnail==12.11.0",
+    # "sorl-thumbnail==13.0.0"
+]
